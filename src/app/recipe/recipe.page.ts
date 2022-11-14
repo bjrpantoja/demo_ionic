@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipePage implements OnInit {
 
-  constructor() { }
+  id: string;
+  recipe: any = ["Carbonara", "Spaghetti", "Lasagna"];  
+  name: string;  
+
+  constructor(
+    private activatedroute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.id = this.activatedroute.snapshot.paramMap.get("id");
+    console.log(this.id);
+    if(this.id == '1') {
+      this.name = this.recipe[0];
+    } else if(this.id == '2') {
+      this.name = this.recipe[1];
+    } else if(this.id == '3') {
+      this.name == this.recipe[2];
+    }
   }
-
 }
