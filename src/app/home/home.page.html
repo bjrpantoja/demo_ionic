@@ -9,42 +9,98 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">MENU</ion-title>
+      <ion-title size="large">EMPLOYEES</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div>
-    <ion-card routerLink="/recipe/1">
-      <img alt="Carbonara" src="assets/img/Carbonara.jpg" />
+  <div *ngFor="let employee of employees; let a=index">
+    <ion-card routerLink="/employee/{{ a }}">
+      <img alt="{{ name }}" src="assets/img/{{ name }}.jpg"/>
       <ion-card-header>
-        <ion-card-title>Carbonara</ion-card-title>
-        <ion-card-subtitle>kaar-buh-naa-ruh</ion-card-subtitle>
+        <ion-card-title>{{ employee.id }}. {{ employee.name }}</ion-card-title>
+        <ion-card-subtitle>{{ employee.email }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        Carbonara is an Italian pasta dish from Rome made with eggs, hard cheese, cured pork and black pepper. The dish arrived at its modern form, with its current name, in the middle of the 20th century.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card routerLink="/recipe/2">
-      <img alt="Spaghetti" src="assets/img/Spaghetti.jpg" />
-      <ion-card-header>
-        <ion-card-title>Spaghetti</ion-card-title>
-        <ion-card-subtitle>spa-geh-tee</ion-card-subtitle>
-      </ion-card-header>    
-      <ion-card-content>
-        Spaghetti is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals.
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card routerLink="/recipe/3">
-      <img alt="Lasagna" src="assets/img/Lasagna.jpg" />
-      <ion-card-header>
-        <ion-card-title>Lasagna</ion-card-title>
-        <ion-card-subtitle>luh-zahn-yuh</ion-card-subtitle>
-      </ion-card-header>    
-      <ion-card-content>
-        Lasagna is a type of pasta, possibly one of the oldest types, made of very wide, flat sheets.
+        Username: {{ employee.username }}<br>
+        Phone: {{ employee.phone }}<br>
+        Website: {{ employee.website }}
       </ion-card-content>
     </ion-card>
   </div>
 </ion-content>
+
+<!-- SECOND DAY AM OUTPUT -->
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">CARDS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <h1>Attribute Binding</h1>
+    <table border="1">
+      <tr>
+        <td [attr.colspan]="1 + 1">1 & 2</td>
+      </tr>
+      <tr>
+        <td [colSpan]="2">3 & 4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+    </table>
+    <button [style.background-color]="isTrue ? 'red' : 'green'" (click)="click()">{{ actionName }}</button>
+    <ion-button [disabled]="isTrue">Disabled</ion-button>
+    <h1 *ngIf="isTrue">Hello World!</h1>
+  </div>
+</ion-content> -->
+<!-- END OF SECOND DAY AM OUTPUT -->
+
+<!-- FIRST DAY OUTPUT -->
+<!--<ion-content [fullscreen]="true">
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">CARDS</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-fab vertical="bottom" horizontal="start" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="arrow-up-circle"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<div>
+  <ion-card routerLink="/recipe/1">
+    <img alt="Carbonara" src="assets/img/Carbonara.jpg" />
+    <ion-card-header>
+      <ion-card-title>Carbonara</ion-card-title>
+      <ion-card-subtitle>kaar-buh-naa-ruh</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Carbonara is an Italian pasta dish from Rome made with eggs, hard cheese, cured pork and black pepper. The dish arrived at its modern form, with its current name, in the middle of the 20th century.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/recipe/2">
+    <img alt="Spaghetti" src="assets/img/Spaghetti.jpg" />
+    <ion-card-header>
+      <ion-card-title>Spaghetti</ion-card-title>
+      <ion-card-subtitle>spa-geh-tee</ion-card-subtitle>
+    </ion-card-header>    
+    <ion-card-content>
+      Spaghetti is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/recipe/3">
+    <img alt="Lasagna" src="assets/img/Lasagna.jpg" />
+    <ion-card-header>
+      <ion-card-title>Lasagna</ion-card-title>
+      <ion-card-subtitle>luh-zahn-yuh</ion-card-subtitle>
+    </ion-card-header>    
+    <ion-card-content>
+      Lasagna is a type of pasta, possibly one of the oldest types, made of very wide, flat sheets.
+    </ion-card-content>
+  </ion-card>
+</div> 
+</ion-content> -->
+<!-- END OF FIRST DAY OUTPUT -->

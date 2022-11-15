@@ -1,17 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Recipe</ion-title>
+    <ion-title>Employee Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img alt="{{ name }}" src="assets/img/{{ name }}.jpg" />  
-
   <ion-text color="primary">
-    <h1 style="padding-left: 1em;">{{ name }}</h1>
+    <h3 style="padding-left: 1em;">E-mail Address: {{ email }}</h3>
+    <h3 style="padding-left: 1em;">Phone: {{ phone }}</h3>
+    <h3 style="padding-left: 1em;">Website: {{ website }}</h3>
   </ion-text>
 
   <p>
     <ion-button expand="block" color="primary" routerLink="/home"><ion-icon name="home-outline"></ion-icon>&nbsp; Home</ion-button>    
-  </p>  
+  </p> 
 </ion-content>
